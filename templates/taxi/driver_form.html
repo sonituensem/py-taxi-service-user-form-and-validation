@@ -1,22 +1,20 @@
 {% extends "base.html" %}
-{% load crispy_forms_filters %}
 
 {% block content %}
 
 <h1>
-    {{ object|yesno:"Update,Create" }} driver
+    Update driver
 </h1>
 
 
 <form
-    action=""
     method="post"
     novalidate
 >
 
     {% csrf_token %}
 
-    {{ form|crispy }}
+    {{ form.as_p }}
 
     <input
         type="submit"
@@ -25,5 +23,6 @@
     >
 
 </form>
+
 
 {% endblock %}
